@@ -18,12 +18,13 @@ All of my SQL practice and projects will be located here.
     
 <details open>
 <summary>Data Analysis / Visuals</summary>
+<a href="https://cameroncss.github.io/Data-Analysis/Netflix/index.html" target="new">Netflix Movies and TV Shows</a>
+<br>
 <a href="https://github.com/CameronCSS/PersonalProjects/tree/main/Data%20Analysis/Sales%20Performance%20Review" target="new">Sales Performance Review</a>
-  <br>
+<br>
 <a href="https://github.com/CameronCSS/PersonalProjects/blob/main/Data%20Analysis/SLC%20civilian%20complaints/README.md" target="new">SLC civilian complaints</a>
 <br>
 <a href="https://github.com/CameronCSS/PersonalProjects/blob/main/Data%20Analysis/SLC%20Homless%20Data" target="new">SLC Homless Data</a>
-</details>
     
 
 <details open>
