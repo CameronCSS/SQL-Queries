@@ -25,7 +25,8 @@ All of my SQL practice and projects will be located here.
 <a href="https://github.com/CameronCSS/PersonalProjects/blob/main/Data%20Analysis/SLC%20civilian%20complaints/README.md" target="new">SLC civilian complaints</a>
 <br>
 <a href="https://github.com/CameronCSS/PersonalProjects/blob/main/Data%20Analysis/SLC%20Homless%20Data" target="new">SLC Homless Data</a>
-    
+
+  <br>
 
 <details open>
 <summary>Programming Projects/Practice</summary>
