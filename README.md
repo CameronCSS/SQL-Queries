@@ -26,6 +26,7 @@ All of my SQL practice and projects will be located here.
 <br>
 <a href="https://github.com/CameronCSS/PersonalProjects/blob/main/Data%20Analysis/SLC%20Homless%20Data" target="new">SLC Homless Data</a>
 
+<br>
   <br>
 
 <details open>
