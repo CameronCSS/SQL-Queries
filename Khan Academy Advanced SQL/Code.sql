@@ -1,5 +1,6 @@
 # Generic SQL 
  - language: SQL 
+ .sql linguist-language=sql
 
 SELECT author, SUM(words) AS total_words 
 FROM books 
