@@ -28,7 +28,7 @@ All of my SQL practice and projects will be located here.
 
 <details open>
 <summary>Programming Projects/Practice</summary>
-<a href="https://github.com/CameronCSS/PersonalProjects/tree/main/Programming%20Projects/Python%20Wage%20Calculator" target="new">Python Wage Calculator</a>
+<a href="https://github.com/CameronCSS/Programming-Projects/tree/main/Python%20Wage%20Calculator" target="new">Python Wage Calculator</a>
 </details>
     
 
