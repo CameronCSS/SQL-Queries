@@ -3,7 +3,7 @@ All of my SQL practice and projects will be located here.
 
 <details open>
   <summary>SQL Projects</summary>
-<a href="https://github.com/CameronCSS/PersonalProjects/blob/main/SQL%20Projects/8%20Week%20SQL%20Challenge%20%23%201" target="new">8 Week SQL Challenge # 1</a>
+<a href="https://github.com/CameronCSS/SQL-Projects/tree/main/8%20Week%20SQL%20Challenge%20%23%201" target="new">8 Week SQL Challenge # 1</a>
 </details>
 
 ## Experience
@@ -17,16 +17,13 @@ All of my SQL practice and projects will be located here.
 ### View My Other Projects
     
 <details open>
-<summary>Data Analysis / Visuals</summary>
+<summary>Data Analysis / Visuals Projects</summary>
 <a href="https://cameroncss.github.io/Data-Analysis/Netflix/index.html" target="new">Netflix Movies and TV Shows</a>
 <br>
-<a href="https://github.com/CameronCSS/PersonalProjects/tree/main/Data%20Analysis/Sales%20Performance%20Review" target="new">Sales Performance Review</a>
+<a href="https://github.com/CameronCSS/Data-Analysis/tree/main/Sales%20Performance%20Review" target="new">Sales Performance Review</a>
 <br>
-<a href="https://github.com/CameronCSS/PersonalProjects/blob/main/Data%20Analysis/SLC%20civilian%20complaints/README.md" target="new">SLC civilian complaints</a>
-<br>
-<a href="https://github.com/CameronCSS/PersonalProjects/blob/main/Data%20Analysis/SLC%20Homless%20Data" target="new">SLC Homless Data</a>
-
-<br>
+<a href="https://github.com/CameronCSS/Data-Analysis/tree/main/SLC%20civilian%20complaints" target="new">SLC civilian complaints</a>
+  <br>
   <br>
 
 <details open>
