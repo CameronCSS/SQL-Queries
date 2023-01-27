@@ -1,3 +1,6 @@
+# Generic SQL 
+ - language: SQL 
+
 SELECT author, SUM(words) AS total_words 
 FROM books 
 GROUP BY author HAVING total_words > 1000000;
