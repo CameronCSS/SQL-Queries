@@ -77,35 +77,61 @@ WHERE title LIKE '%Wall-%';
 ### SQL Lesson 4: Filtering and sorting Query results
 
 ```sql
-
+-- List all directors of Pixar movies (alphabetically), without duplicates
+SELECT DISTINCT(director) FROM movies
+ORDER BY director;
 ```
 ```sql
-
+-- List the last four Pixar movies released (ordered from most recent to least)
+SELECT title FROM movies
+ORDER BY year DESC LIMIT 4;
 ```
 ```sql
-
+-- List the first five Pixar movies sorted alphabetically
+SELECT title FROM movies
+ORDER BY title ASC LIMIT 5;
 ```
 ```sql
+-- List the first five Pixar movies sorted alphabetically
+SELECT title FROM movies
+ORDER BY title ASC LIMIT 5
+OFFSET 5;
+```
 
+### SQL Lesson 5: Simple SELECT Queries
+
+```sql
+-- List all the Canadian cities and their populations
+SELECT city, population FROM north_american_cities
+WHERE country = 'Canada';
 ```
 ```sql
-
+-- Order all the cities in the United States by their latitude from north to south
+SELECT city FROM north_american_cities
+WHERE country = 'United States'
+ORDER BY latitude DESC;
 ```
 ```sql
-
+-- List all the cities west of Chicago, ordered from west to east
+SELECT city FROM north_american_cities
+WHERE Longitude < (SELECT Longitude FROM north_american_cities WHERE City = 'Chicago')
+ORDER BY Longitude ASC;
 ```
 ```sql
-
+-- List the two largest cities in Mexico (by population)
+SELECT city FROM north_american_cities
+WHERE country = 'Mexico'
+ORDER BY population DESC LIMIT 2;
 ```
 ```sql
-
+-- List the third and fourth largest cities (by population) in the United States and their population
+SELECT city FROM north_american_cities
+WHERE country = 'United States'
+ORDER BY population DESC LIMIT 2
+OFFSET 2;
 ```
-```sql
+### SQL Lesson 6: Multi-table queries with JOINs
 
-```
-```sql
-
-```
 ```sql
 
 ```
