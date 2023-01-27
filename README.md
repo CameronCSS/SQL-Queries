@@ -1,5 +1,5 @@
 # SQL Personal Projects
-All of my SQL practice and projects will be located here.
+All of my SQL code and projects will be located here.
 
 <details open>
   <summary>SQL Projects</summary>
