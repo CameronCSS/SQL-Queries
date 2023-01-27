@@ -1,6 +1,6 @@
 # Generic SQL 
  - language: SQL 
- .sql linguist-language=sql
+ *.sql linguist-language=sql
 
 CREATE TABLE sales (
   "customer_id" VARCHAR(1),
