@@ -12,7 +12,7 @@
 ```
 
 #### Answer: The wordiest author Part 1
-```python
+```sql
 SELECT author, SUM(words) AS total_words 
 FROM books 
 GROUP BY author HAVING total_words > 1000000;
@@ -25,7 +25,7 @@ GROUP BY author HAVING total_words > 1000000;
 ```
 
 #### Answer: The wordiest author Part 2
-```python
+```sql
 SELECT author, AVG(words) AS avg_words 
 FROM books
 GROUP BY author HAVING avg_words > 150000;
@@ -40,7 +40,7 @@ which you can compute by multiplying and rounding the fraction_completed column.
 ```
 
 #### Answer: Gradebook Part 1
-```python
+```sql
 SELECT name, number_grade, ROUND(fraction_completed * 100) AS percent_completed 
 FROM student_grades;
 ```
@@ -54,7 +54,7 @@ outputting 'A' for grades > 90, 'B' for grades > 80, 'C' for grades > 70, and 'F
 ```
 
 #### Answer: Gradebook Part 2
-```python
+```sql
 SELECT COUNT(*) AS count,
 CASE 
     WHEN number_grade > 90 THEN "A"
@@ -77,7 +77,7 @@ GROUP BY letter_grade;
 ```
 
 #### Answer: Bobby's Hobbies Part 1
-```python
+```sql
 INSERT INTO persons (name, age) VALUES ("NEW GUY", 23);
 INSERT INTO hobbies (person_id, name) VALUES (6, "beatbox");
 ```
@@ -88,7 +88,7 @@ INSERT INTO hobbies (person_id, name) VALUES (6, "beatbox");
 ```
 
 #### Answer: Bobby's Hobbies Part 2
-```python
+```sql
 SELECT persons.name, hobbies.name 
 FROM persons
 JOIN hobbies
@@ -101,7 +101,7 @@ ON hobbies.person_id = persons.id;
 ```
 
 #### Answer: Bobby's Hobbies Part 3
-```python
+```sql
 SELECT persons.name, hobbies.name FROM persons
 JOIN hobbies
 ON hobbies.person_id = persons.id
@@ -117,7 +117,7 @@ WHERE persons.name = 'Bobby McBobbyFace';
 ```
 
 #### Answer: Customer's orders Part 1
-```python
+```sql
 SELECT customers.name, customers.email, orders.item, orders.price FROM customers
 LEFT OUTER JOIN orders
 ON orders.customer_id = customers.id ;
@@ -132,7 +132,7 @@ with their name, email, and total amount of money they've spent on orders.
 ```
 
 #### Answer: Customer's orders Part 2
-```python
+```sql
 SELECT customers.name, customers.email, SUM(orders.price) AS total_spent
 FROM customers
 LEFT OUTER JOIN orders
@@ -149,7 +149,7 @@ ORDER BY total_spent DESC;
 ```
 
 #### Answer: Sequels in SQL Part 1
-```python
+```sql
 SELECT movies.title, sequel.title AS sequel
 FROM movies
 LEFT OUTER JOIN movies sequel
@@ -163,7 +163,7 @@ ON movies.sequel_id = sequel.id;
 ```
 
 #### Answer: Dynamic Documents Part 1
-```python
+```sql
 UPDATE documents SET author = "Jackie Draper" 
 WHERE author = "Jackie Paper";
 
@@ -179,7 +179,7 @@ SELECT * FROM documents;
 ```
 
 #### Answer: Dynamic Documents Part 2
-```python
+```sql
 DELETE FROM documents WHERE title = "Things I'm Afraid Of";
 
 SELECT * FROM documents;
@@ -193,7 +193,7 @@ and a table of friend connections between the people. In this first step, use a 
 ```
 
 #### Answer: FriendBook Part 1
-```python
+```sql
 SELECT persons.fullname, hobbies.name
 FROM persons
 JOIN hobbies
@@ -206,7 +206,7 @@ ON hobbies.person_id = persons.id;
 ```
 
 #### Answer: FriendBook Part 2
-```python
+```sql
 SELECT a.fullname, b.fullname 
 FROM friends
 JOIN persons a
