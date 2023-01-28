@@ -2,12 +2,12 @@
 All of my SQL code and projects will be located here.
 
 <details open>
-  <summary>SQL Projects</summary>
-<a href="https://github.com/CameronCSS/SQL-Projects/tree/main/8%20Week%20SQL%20Challenge%20%23%201" target="new">8 Week SQL Challenge # 1</a>
+  <summary>SQL Queries</summary>
+<a href="https://github.com/CameronCSS/SQL-Queries/tree/main/8%20Week%20SQL%20Challenge%20%23%201" target="new">8 Week SQL Challenge # 1</a>
 <br>
-<a href="https://github.com/CameronCSS/SQL-Projects/tree/main/Khan%20Academy%20Advanced%20SQL" target="new">Khan Academy Advanced SQL</a>
+<a href="https://github.com/CameronCSS/SQL-Queries/tree/main/Khan%20Academy%20Advanced%20SQL" target="new">Khan Academy Advanced SQL</a>
 <br>
-<a href="https://github.com/CameronCSS/SQL-Projects/tree/main/SQLbolt%20-%20SQL%20lessons" target="new">SQLbolt - SQL lessons</a>
+<a href="https://github.com/CameronCSS/SQL-Queries/tree/main/SQLbolt%20-%20SQL%20lessons" target="new">SQLbolt - SQL lessons</a>
 </details>
 
 ## Experience
@@ -31,8 +31,8 @@ All of my SQL code and projects will be located here.
   <br>
 
 <details open>
-<summary>Programming Projects/Practice</summary>
-<a href="https://github.com/CameronCSS/Programming-Projects/tree/main/Python%20Wage%20Calculator" target="new">Python Wage Calculator</a>
+<summary>Programming Projects / Code</summary>
+<a href="https://github.com/CameronCSS/Programming-Languages/tree/main/Python%20Wage%20Calculator" target="new">Python Wage Calculator</a>
 </details>
     
 
