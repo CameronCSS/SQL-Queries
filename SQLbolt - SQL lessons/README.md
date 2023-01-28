@@ -1,6 +1,6 @@
 # SQLbolt - SQL Queries
 
-This collection of SQL queries was learned and compiled from [SQLbolt](https://sqlbolt.com/), a website that provides interactive tutorials to help users learn SQL (Structured Query Language) and improve their skills.
+This collection of SQL queries was learned from [SQLbolt](https://sqlbolt.com/), a website that provides interactive tutorials to help users learn SQL (Structured Query Language) and improve their skills.
 
 The queries included in this code showcase the various capabilities of SQL and demonstrate how to use it to retrieve and manipulate data. They cover a wide range of topics, including:
 
