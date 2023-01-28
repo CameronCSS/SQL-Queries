@@ -15,39 +15,39 @@ The queries included in this code showcase the various capabilities of SQL and d
 ### SQL Lesson 1: SELECT queries 101
 
 ```sql
---Find the title of each film
+-- Find the title of each film
 SELECT title FROM movies;
 ```
 ```sql
---Find the director of each film
+-- Find the director of each film
 SELECT director FROM movies;
 ```
 ```sql
---Find the title and director of each film
+-- Find the title and director of each film
 SELECT title, director FROM movies;
 ```
 ```sql
---Find the title and year of each film
+-- Find the title and year of each film
 SELECT title, year FROM movies;
 ```
 ```sql
---Find all the information about each film
+-- Find all the information about each film
 SELECT * FROM movies;
 ```
 ### SQL Lesson 2: Queries with constraints (Pt. 1)
 
 ```sql
---Find the movie with a row id of 6
+-- Find the movie with a row id of 6
 SELECT title FROM movies
 WHERE id = 6;
 ```
 ```sql
--Find the movies released in the years between 2000 and 2010
+-- Find the movies released in the years between 2000 and 2010
 SELECT title FROM movies
 WHERE year BETWEEN 2000 AND 2010;
 ```
 ```sql
---Find the movies not released in the years between 2000 and 2010
+-- Find the movies not released in the years between 2000 and 2010
 SELECT title FROM movies
 WHERE year NOT BETWEEN 2000 AND 2010;
 ```
