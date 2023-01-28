@@ -1,8 +1,14 @@
-# SQLbolt - SQL lessons
+# SQLbolt - SQL Queries
 
-"To retrieve data from a SQL database, we need to write SELECT statements, which are often colloquially refered to as queries. A query in itself is just a statement which declares what data we are looking for, where to find it in the database, and optionally, how to transform it before it is returned. It has a specific syntax though, which is what we are going to learn in the following exercises." - SQLBolt
+This collection of SQL queries was learned and compiled from [SQLbolt](https://sqlbolt.com/), a website that provides interactive tutorials to help users learn SQL (Structured Query Language) and improve their skills.
 
-- <a href="https://sqlbolt.com/lesson/select_queries_introduction">Link to SQLbolt </a>
+The queries included in this code showcase the various capabilities of SQL and demonstrate how to use it to retrieve and manipulate data. They cover a wide range of topics, including:
+
+- SELECT statements
+- Filtering and sorting data
+- Joining tables
+- Creating and modifying databases and tables
+
 
 ---
 
@@ -133,5 +139,182 @@ OFFSET 2;
 ### SQL Lesson 6: Multi-table queries with JOINs
 
 ```sql
+-- Find the domestic and international sales for each movie
+SELECT movies.title, boxoffice.domestic_sales, boxoffice.international_sales
+FROM movies
+JOIN boxoffice
+ON movies.id = boxoffice.Movie_id;
+```
+```sql
+-- Show the sales numbers for each movie that did better internationally rather than domestically
+SELECT movies.title, boxoffice.domestic_sales, boxoffice.international_sales
+FROM movies
+JOIN boxoffice
+ON movies.id = boxoffice.Movie_id
+WHERE boxoffice.international_sales > boxoffice.domestic_sales;
+```
+```sql
+-- List all the movies by their ratings in descending order 
+SELECT movies.title, boxoffice.rating
+FROM movies
+JOIN boxoffice
+ON movies.id = boxoffice.Movie_id
+ORDER BY boxoffice.rating DESC;
+```
+
+### SQL Lesson 7: OUTER JOINs
+
+```sql
+-- Find the list of all buildings that have employees
+SELECT employees.building 
+FROM employees
+LEFT OUTER JOIN buildings
+ON employees.building = buildings.building_name
+GROUP BY buildings.building_name;
+```
+```sql
+-- Find the list of all buildings and their capacity
+SELECT * 
+FROM buildings;
+```
+```sql
+-- List all buildings and the distinct employee roles in each building (including empty buildings)
+SELECT DISTINCT(buildings.building_name), employees.role
+FROM buildings
+LEFT OUTER JOIN employees
+ON buildings.building_name = employees.building;
+```
+
+### SQL Lesson 8: A short note on NULLs
+
+```sql
+-- Find the name and role of all employees who have not been assigned to a building
+SELECT name, role 
+FROM employees
+WHERE building IS NULL;
+```
+```sql
+-- Find the names of the buildings that hold no employees
+SELECT buildings.building_name
+FROM buildings
+LEFT OUTER JOIN employees
+ON buildings.building_name = employees.building
+WHERE employees.building IS NULL;
+```
+
+### SQL Lesson 9: Queries with expressions
+
+```sql
+-- List all movies and their combined sales in millions of dollars
+SELECT movies.title, (boxoffice.domestic_sales + boxoffice.international_sales) / 1000000 AS combined_sales_millions
+FROM movies
+JOIN boxoffice
+ON movies.id = boxoffice.movie_id;
+```
+```sql
+-- List all movies and their ratings in percent
+SELECT movies.title, (boxoffice.rating * 10) as rating_percent
+FROM movies
+JOIN boxoffice
+ON movies.id = boxoffice.movie_id;
+```
+```sql
+-- List all movies that were released on even number years
+SELECT title, year FROM movies
+WHERE (year % 2) = 0;
+```
+
+### SQL Lesson 10: Queries with aggregates (Pt. 1)
+
+```sql
+-- Find the longest time that an employee has been at the studio
+SELECT name, MAX(years_employed)
+FROM employees;
+```
+```sql
+-- For each role, find the average number of years employed by employees in that role
+SELECT DISTINCT(role), AVG(years_employed)
+FROM employees
+GROUP BY role;
+```
+```sql
+-- Find the total number of employee years worked in each building
+SELECT building, SUM(years_employed)
+FROM employees
+GROUP BY building;
+```
+
+### SQL Lesson 11: Queries with aggregates (Pt. 2)
+
+```sql
+-- Find the number of Artists in the studio (without a HAVING clause)
+SELECT COUNT(role) FROM employees
+WHERE role = 'Artist';
+```
+```sql
+-- Find the number of Employees of each role in the studio
+SELECT role, COUNT(role) FROM employees
+GROUP BY role;
+```
+```sql
+-- Find the total number of years employed by all Engineers
+SELECT role, SUM(years_employed) 
+FROM employees
+WHERE role = 'Engineer'
+```
+
+### SQL Lesson 12: Order of execution of a Query
+
+```sql
+-- Find the number of movies each director has directed
+SELECT COUNT(title), director
+FROM movies
+GROUP BY director;
+```
+```sql
+SELECT movies.director, SUM(boxoffice.domestic_sales + boxoffice.	international_sales) AS total_sales
+FROM movies
+LEFT OUTER JOIN boxoffice
+ON movies.id = boxoffice.movie_id
+GROUP BY director;
+```
+
+### SQL Lesson 13: Inserting rows
+
+```sql
 
 ```
+```sql
+
+```
+```sql
+
+```
+```sql
+
+```
+```sql
+
+```
+```sql
+
+```
+```sql
+
+```
+```sql
+
+```
+```sql
+
+```
+```sql
+
+```
+```sql
+
+```
+```sql
+
+```
+
