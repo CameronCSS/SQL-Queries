@@ -282,39 +282,100 @@ GROUP BY director;
 ### SQL Lesson 13: Inserting rows
 
 ```sql
-
+-- Add the studio's new production, Toy Story 4 to the list of movies (you can use any director)
+INSERT INTO movies 
+(title, director, year, length_minutes)
+VALUES ('Toy Story 4', 'Josh Cooley', 2019, 100);
+SELECT * FROM movies;
 ```
 ```sql
+-- Toy Story 4 has been released to critical acclaim! It had a rating of 8.7, and made 340 million domestically and 270 million internationally. 
+-- Add the record to the BoxOffice table.
+INSERT INTO boxoffice 
+(movie_id, rating, domestic_sales, international_sales)
+VALUES (15, 8.7, 340000000, 270000000);
+SELECT * FROM boxoffice;
+```
 
+### SQL Lesson 14: Updating rows
+
+```sql
+-- The director for A Bug's Life is incorrect, it was actually directed by John Lasseter
+UPDATE movies
+SET director = 'John Lasseter'
+WHERE title = 'A Bug''s Life';
+SELECT * FROM movies;
 ```
 ```sql
-
+-- The year that Toy Story 2 was released is incorrect, it was actually released in 1999
+UPDATE movies
+SET year = 1999
+WHERE title = 'Toy Story 2';
+SELECT * FROM movies;
 ```
 ```sql
+-- Both the title and director for Toy Story 8 is incorrect! The title should be "Toy Story 3" and it was directed by Lee Unkrich
+UPDATE movies
+SET title = 'Toy Story 3',
+    director = 'Lee Unkrich'
+WHERE title = 'Toy Story 8';
+SELECT * FROM movies;
+```
 
+### SQL Lesson 15: Deleting rows
+
+```sql
+-- This database is getting too big, lets remove all movies that were released before 2005.
+DELETE FROM movies
+WHERE year < 2005;
+SELECT * FROM movies;
 ```
 ```sql
+-- Andrew Stanton has also left the studio, so please remove all movies directed by him.
+DELETE FROM movies
+WHERE director = 'Andrew Stanton';
+SELECT * FROM movies;
+```
 
+### SQL Lesson 16: Creating tables
+
+```sql
+-- Create a new table named Database with the following columns:
+-- 1. Name A string (text) describing the name of the database
+-- 2. Version A number (floating point) of the latest version of this database
+-- 3. Download_count An integer count of the number of times this database was downloaded
+-- This table has no constraints.
+
+CREATE TABLE Database (
+    Name TEXT,
+    Version FLOAT,
+    Download_Count INTEGER);
+SELECT * FROM database;
+```
+
+### SQL Lesson 17: Altering tables
+
+```sql
+-- Add a column named Aspect_ratio with a FLOAT data type to store the aspect-ratio each movie was released in.
+ALTER TABLE Movies
+  ADD COLUMN Aspect_ratio FLOAT DEFAULT 3;
+SELECT * FROM movies;
 ```
 ```sql
+-- Add another column named Language with a TEXT data type to store the language that the movie was released in. Ensure that the default for this language is English.
+ALTER TABLE Movies
+  ADD COLUMN Language TEXT DEFAULT 'English';
+SELECT * FROM movies;
+```
 
+### SQL Lesson 18: Dropping tables
+
+```sql
+-- We've sadly reached the end of our lessons, lets clean up by removing the Movies table
+DROP TABLE IF EXISTS movies;
 ```
 ```sql
-
-```
-```sql
-
-```
-```sql
-
-```
-```sql
-
-```
-```sql
-
-```
-```sql
-
+-- And drop the BoxOffice table as well
+DROP TABLE IF EXISTS boxoffice;
 ```
 
