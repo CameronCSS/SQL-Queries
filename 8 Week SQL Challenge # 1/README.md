@@ -324,7 +324,7 @@ GROUP BY purchases.customer_id;
 - In this case study, the CASE expression was used to apply different multipliers to the price of the items based on certain conditions, such as the product name or the order date. This can be a useful way to add conditional logic to a query and customize the results based on specific criteria.
 -----
 
-### <a href="https://github.com/CameronCSS/PersonalProjects">BACK TO INDEX</a>
+### <a href="https://github.com/CameronCSS/PersonalProjects/blob/main/README.md">BACK TO PORTFOLIO</a>
 
 ## Contact Me
 
