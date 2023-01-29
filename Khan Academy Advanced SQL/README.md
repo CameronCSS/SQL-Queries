@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 # Khan Academy: Advanced SQL Queries - Challenges
 
 #### Queries begin with basic concepts and progress to more complex topics as we progress.
@@ -68,6 +70,8 @@ CASE
 FROM student_grades
 GROUP BY letter_grade;
 ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ---
 
 #### CHALLENGE: Bobby's Hobbies Part 1
@@ -140,6 +144,9 @@ ON orders.customer_id = customers.id
 GROUP BY customers.id
 ORDER BY total_spent DESC;
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ---
 
 #### CHALLENGE: Sequels in SQL Part 1
@@ -214,6 +221,8 @@ ON friends.person1_id = a.id
 JOIN persons b
 ON friends.person2_id = b.id;
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ----
 
