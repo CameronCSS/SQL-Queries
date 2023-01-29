@@ -380,3 +380,13 @@ DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS boxoffice;
 ```
 
+### <a href="https://github.com/CameronCSS/PersonalProjects/blob/main/README.md">BACK TO PORTFOLIO</a>
+
+## Contact Me
+
+| Contact Method | Link |
+| --- | --- |
+| Email | CameronSeamons@gmail.com |
+| LinkedIn | https://www.linkedin.com/in/cameron-css/|
+| Twitter | https://twitter.com/Cameron_CSS |
+| Resume | ['Cameron Seamons' Resume](https://drive.google.com/file/d/19vkbf2HjEpXpxndWYa4A6Dyt6gsnGv73/view?usp=sharing) | 
