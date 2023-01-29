@@ -19,7 +19,7 @@ Danny wants to use the data to answer a few simple questions about his customers
 
 ### Danny's Diner Data
 #### *Starting SQL Script to establish the DB*
-```python
+```sql
 CREATE TABLE sales (
   "customer_id" VARCHAR(1),
   "order_date" DATE,
@@ -98,7 +98,7 @@ VALUES
 
   **1. What is the total amount each customer spent at the restaurant?**
 
-```python
+```sql
 SELECT customer_id, SUM(price) AS total_spent
   FROM sales
 JOIN menu ON sales.product_id = menu.product_id
@@ -114,7 +114,7 @@ JOIN menu ON sales.product_id = menu.product_id
 <br>
   **2. How many days has each customer visited the restaurant?**
 
-```python
+```sql
 SELECT customer_id, COUNT(DISTINCT order_date) as days_visited
 FROM sales
 GROUP BY customer_id;
@@ -128,7 +128,7 @@ GROUP BY customer_id;
 <br>
   **3. What was the first item from the menu purchased by each customer?**
   
-```python
+```sql
 SELECT sales.customer_id, menu.product_name, Order_date
 FROM sales
 JOIN menu ON sales.product_id = menu.product_id
@@ -149,7 +149,7 @@ JOIN (
 <br>
 
  **4. What is the most purchased item on the menu and how many times was it purchased by all customers?**
- ```python
+```sql
 SELECT menu.product_name, COUNT(sales.product_id) as number_purchased
 FROM sales
 JOIN menu ON sales.product_id = menu.product_id
@@ -167,7 +167,7 @@ ORDER BY number_purchased DESC;
 <br>
 
  **5. Which item was the most popular for each customer?**
- ```python
+```sql
  WITH purchases AS (
   SELECT sales.customer_id, menu.product_name, COUNT(sales.product_id) as number_purchased,
          RANK() OVER (PARTITION BY sales.customer_id ORDER BY COUNT(sales.product_id) DESC) AS ranking
@@ -196,7 +196,7 @@ WHERE ranking = 1;
 <br>
 
  **6. Which item was purchased first by the customer after they became a member?**
-```python
+```sql
 SELECT sales.customer_id, menu.product_name, sales.order_date
 FROM sales
 JOIN menu ON sales.product_id = menu.product_id
@@ -214,7 +214,7 @@ WHERE sales.order_date > members.join_date;
 <br>
   
  **7. Which item was purchased just before the customer became a member?**
- ```python
+```sql
  SELECT sales.customer_id, menu.product_name, sales.order_date, members.join_date
 FROM sales
 JOIN menu ON sales.product_id = menu.product_id
@@ -233,7 +233,7 @@ ORDER BY sales.customer_id, sales.order_date DESC;
 <br>
 
  **8. What is the total items and amount spent for each member before they became a member?**
-```python
+```sql
 SELECT sales.customer_id, COUNT(sales.product_id) as number_items, SUM(menu.price) as amount_spent
 FROM sales
 JOIN menu ON sales.product_id = menu.product_id
@@ -254,7 +254,7 @@ GROUP BY sales.customer_id;
 <br>
 
  **9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?**
-```python
+```sql
 SELECT sales.customer_id, 
   SUM((CASE 
     WHEN menu.product_name = 'sushi' THEN menu.price * 2 
@@ -276,7 +276,7 @@ GROUP BY sales.customer_id;
 
  **10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi
 how many points do customer A and B have at the end of January?**
-```python
+```sql
 WITH dates AS 
 (
  SELECT *, 
