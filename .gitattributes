@@ -1,14 +1,19 @@
 *.js linguist-detectable=true
+*.js linguist-documentation=false
 *.js linguist-language=javascript
 
 *.sql linguist-detectable=true
+*.sql linguist-documentation=false
 *.sql linguist-language=sql
 
 *.html linguist-detectable=true
+*.html linguist-documentation=false
 *.html linguist-language=html
 
 *.css linguist-detectable=true
+*.css linguist-documentation=false
 *.css linguist-language=css
 
 *.py linguist-detectable=true
+*.py linguist-documentation=false
 *.py linguist-language=python
