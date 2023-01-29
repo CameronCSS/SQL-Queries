@@ -1,0 +1,14 @@
+*.js linguist-detectable=true
+*.js linguist-language=sql
+
+*.sql linguist-detectable=true
+*.sql linguist-language=sql
+
+*.html linguist-detectable=true
+*.html linguist-language=html
+
+*.css linguist-detectable=true
+*.css linguist-language=css
+
+*.py linguist-detectable=true
+*.py linguist-language=python
