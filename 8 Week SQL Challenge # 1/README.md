@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 <a href="https://8weeksqlchallenge.com/case-study-1/" target="_blank"> LINK TO THE CHALLENGE </a>
 
 ```diff
@@ -76,6 +78,8 @@ VALUES
 ## Relationship Diagram
 
 ![image](https://user-images.githubusercontent.com/121735588/211181303-9898c3da-0749-4f4e-ad98-ed368dad809f.png)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ----
 ### Questions
@@ -165,6 +169,8 @@ ORDER BY number_purchased DESC;
  ```
  ![image](https://user-images.githubusercontent.com/121735588/211182506-f2ea6c5f-15c1-4a31-8930-c33d0d301dff.png)
 <br>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
  **5. Which item was the most popular for each customer?**
 ```sql
@@ -323,6 +329,8 @@ GROUP BY purchases.customer_id;
 - The JOIN clause is used to combine rows from two or more tables based on a related column, such as customer_id or product_id. There are several types of JOIN clauses, including INNER JOIN, OUTER JOIN, LEFT JOIN, and RIGHT JOIN, each of which has its own syntax and behavior.
 - In this case study, the CASE expression was used to apply different multipliers to the price of the items based on certain conditions, such as the product name or the order date. This can be a useful way to add conditional logic to a query and customize the results based on specific criteria.
 -----
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### <a href="https://github.com/CameronCSS/PersonalProjects/blob/main/README.md">BACK TO PORTFOLIO</a>
 
