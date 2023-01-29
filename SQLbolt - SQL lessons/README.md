@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 # SQLbolt - SQL Queries
 
 This collection of SQL queries was learned from [SQLbolt](https://sqlbolt.com/), a website that provides interactive tutorials to help users learn SQL (Structured Query Language) and improve their skills.
@@ -103,6 +105,8 @@ SELECT title FROM movies
 ORDER BY title ASC LIMIT 5
 OFFSET 5;
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### SQL Lesson 5: Simple SELECT Queries
 
@@ -224,6 +228,8 @@ SELECT title, year FROM movies
 WHERE (year % 2) = 0;
 ```
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ### SQL Lesson 10: Queries with aggregates (Pt. 1)
 
 ```sql
@@ -321,6 +327,7 @@ SET title = 'Toy Story 3',
 WHERE title = 'Toy Story 8';
 SELECT * FROM movies;
 ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### SQL Lesson 15: Deleting rows
 
@@ -379,6 +386,8 @@ DROP TABLE IF EXISTS movies;
 -- And drop the BoxOffice table as well
 DROP TABLE IF EXISTS boxoffice;
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### <a href="https://github.com/CameronCSS/PersonalProjects/blob/main/README.md">BACK TO PORTFOLIO</a>
 
