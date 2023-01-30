@@ -233,7 +233,7 @@ ON friends.person2_id = b.id;
 <div style="display: flex;">
   <table style="flex: 1;">
   
-| Contact Method |
+||
 | --- |
 | :e-mail: :heavy_minus_sign: CameronSeamons@gmail.com |
 | <a href="https://www.linkedin.com/in/cameron-css/">![linkedin](https://user-images.githubusercontent.com/121735588/215363352-ad51a5e1-0de8-48be-8ceb-28c610e5d34d.png)</a> :heavy_minus_sign: https://www.linkedin.com/in/cameron-css/|
