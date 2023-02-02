@@ -332,7 +332,7 @@ GROUP BY purchases.customer_id;
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### <a href="https://github.com/CameronCSS/PersonalProjects/blob/main/README.md">BACK TO PORTFOLIO</a>
+<a href="https://github.com/CameronCSS"><strong>« Back to Profile</strong></a>
 
 ## Contact Me
 
