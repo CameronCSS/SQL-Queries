@@ -39,8 +39,7 @@ All of my SQL code and projects will be located here.
     
 
 ----
-
-### <a href="https://github.com/CameronCSS/PersonalProjects/blob/main/README.md">BACK TO PORTFOLIO</a>
+<a href="https://github.com/CameronCSS"><strong>« Back to Profile</strong></a>
 
 ## Contact Me
 
