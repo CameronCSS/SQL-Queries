@@ -41,7 +41,7 @@
 ----
 ### View My Other Projects
     
-<details open>
+<details>
 <summary>Data Analysis / Visuals Projects</summary>
 <a href="https://github.com/CameronCSS/Data-Analysis/tree/main/Power-BI-Dashboards" target="new">Power BI Dashboards</a>
 <br>
@@ -53,7 +53,7 @@
   <br>
   <br>
 
-<details open>
+<details>
 <summary>Programming Projects / Code</summary>
 <a href="https://github.com/CameronCSS/Programming-Languages/tree/main/Python%20Wage%20Calculator" target="new">Python Wage Calculator</a>
 </details>
