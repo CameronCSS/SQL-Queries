@@ -332,6 +332,9 @@ GROUP BY purchases.customer_id;
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<a href="https://github.com/CameronCSS/SQL-Queries/blob/main/README.md"><strong>« Back to SQL Projects</strong></a>
+<br>
+<br>
 <a href="https://github.com/CameronCSS/PersonalProjects/blob/main/README.md"><strong>« Back to Portfolio</strong></a>
 
 ## Contact Me
