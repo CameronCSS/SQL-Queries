@@ -7,7 +7,7 @@
 
   <h2 align="center">SQL Personal Projects</h2>
   <p align="center">
-  All my SQL queries :bookmark_tabs: and projects are listed here!
+  All my SQL queries :bookmark_tabs: and projects are listed here.
    <br> <sub><a href="#Contact">:wavy_dash: Contact Info :wavy_dash:</a></sub>
 <br>
     <br>
