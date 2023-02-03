@@ -25,17 +25,17 @@
 
 <a href="https://github.com/CameronCSS/SQL-Queries/tree/main/8%20Week%20SQL%20Challenge%20%23%201" target="new">8 Week SQL Challenge # 1</a>
 <br>
-:arrow_right_hook: - Explored complex queries to clean data, compute customer figures, and organize data in unusual ways.
+&nbsp; &nbsp;:arrow_right_hook: - Explored complex queries to clean data, compute customer figures, and organize data in unusual ways.
 <br>
 <br>
 <a href="https://github.com/CameronCSS/SQL-Queries/tree/main/Khan%20Academy%20Advanced%20SQL" target="new">Khan Academy Advanced SQL</a>
 <br>
-:arrow_right_hook: - Expand SQL knowledge about combining tables with JOINs and using multiple queries at once.
+&nbsp; &nbsp;:arrow_right_hook: - Expand SQL knowledge about combining tables with JOINs and using multiple queries at once.
 <br>
 <br>
 <a href="https://github.com/CameronCSS/SQL-Queries/tree/main/SQLbolt%20-%20SQL%20lessons" target="new">SQLbolt - SQL lessons</a>
 <br>
-:arrow_right_hook: - Refreshed foundational understanding of SQL and discovered context variations among SQL-powered platforms.
+&nbsp; &nbsp;:arrow_right_hook: - Refreshed foundational understanding of SQL and discovered context variations among SQL-powered platforms.
 <br>
 
 ----
@@ -45,22 +45,22 @@
 <summary>Data Analysis / Visuals Projects</summary>
 <a href="https://github.com/CameronCSS/Data-Analysis/tree/main/Power-BI-Dashboards" target="new">Power BI Dashboards</a>
 <br>
-:arrow_right_hook: - Collection of my Power BI projects/dashboards with detailed analysis and visually appealing data.
+&nbsp; &nbsp;:arrow_right_hook: - Collection of my Power BI projects/dashboards with detailed analysis and visually appealing data.
 <br>
 <br>
 <a href="https://cameroncss.github.io/Data-Analysis/Netflix/index.html" target="new">Netflix Movies and TV Shows</a>
 <br>
-:arrow_right_hook: - Built out multiple sheets to display on a single visual, and created an interactive dashboard.
+&nbsp; &nbsp;:arrow_right_hook: - Built out multiple sheets to display on a single visual, and created an interactive dashboard.
 <br>	
 <br>	
 <a href="https://github.com/CameronCSS/Data-Analysis/tree/main/Sales%20Performance%20Review" target="new">Sales Performance Review</a>
 <br>
-:arrow_right_hook: - Used Power BI to clean and organize data to present to upper management about previous years sales performance.
+&nbsp; &nbsp;:arrow_right_hook: - Used Power BI to clean and organize data to present to upper management about previous years sales performance.
 <br>	
 <br>
 <a href="https://github.com/CameronCSS/Data-Analysis/tree/main/SLC%20civilian%20complaints" target="new">SLC civilian complaints</a>
   <br>
-:arrow_right_hook: - Utilized API calls to gather data from public sources. Built a local DB to use in Power BI to uncover valuable insights.
+&nbsp; &nbsp;:arrow_right_hook: - Utilized API calls to gather data from public sources. Built a local DB to use in Power BI to uncover valuable insights.
   <br>
 </details>
 
@@ -70,7 +70,7 @@
 <summary>Programming Projects / Code</summary>
 <a href="https://github.com/CameronCSS/Programming-Languages/tree/main/Python%20Wage%20Calculator" target="new">Python Wage Calculator</a>
 
-:arrow_right_hook: - Learned the power of Pandas and PyQt5 libraries. Also learned the importance of notating code for Bug fixing in the future.
+&nbsp; &nbsp;:arrow_right_hook: - Learned the power of Pandas and PyQt5 libraries. Also learned the importance of notating code for Bug fixing in the future.
 </details>
     
 
