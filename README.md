@@ -1,21 +1,42 @@
-# SQL Personal Projects
-All of my SQL code and projects will be located here.
+<a name="readme-top"></a>
+<div align="center">
 
-<details open>
-  <summary>SQL Queries</summary>
+  <img src="https://user-images.githubusercontent.com/121735588/216509538-72fa3d3b-c7f9-43f8-b171-5310bf41d605.png" alt="SQLLogo" width="200" height="200">
+	<br><a href="https://github.com/CameronCSS/PersonalProjects/blob/main/README.md"><strong><sub>« Back to Portfolio</sub></strong></a>
+
+
+  <h2 align="center">SQL Personal Projects</h2>
+  <p align="center">
+  All my SQL queries :bookmark_tabs: and projects are listed here!
+   <br> <sub><a href="#Contact">:wavy_dash: Contact Info :wavy_dash:</a></sub>
+<br>
+    <br>
+  </p>
+</div>
+
+
+## SQL Experience
+:ballot_box_with_check: Google data analytics professional certificate
+ <br> :ballot_box_with_check: Completed Khan Academy - Intro to SQL Course
+ <br> :ballot_box_with_check: Finished the SQLBolt - Learn SQL Training
+ <br> :ballot_box_with_check: Case Study 'Data with Danny' 8 Week SQL Challenge
+ 
+## SQL Projects
+
 <a href="https://github.com/CameronCSS/SQL-Queries/tree/main/8%20Week%20SQL%20Challenge%20%23%201" target="new">8 Week SQL Challenge # 1</a>
+<br>
+:arrow_right_hook: - Explored complex queries to clean data, compute customer figures, and organize data in unusual ways.
+<br>
 <br>
 <a href="https://github.com/CameronCSS/SQL-Queries/tree/main/Khan%20Academy%20Advanced%20SQL" target="new">Khan Academy Advanced SQL</a>
 <br>
+:arrow_right_hook: - Expand SQL knowledge about combining tables with JOINs and using multiple queries at once.
+<br>
+<br>
 <a href="https://github.com/CameronCSS/SQL-Queries/tree/main/SQLbolt%20-%20SQL%20lessons" target="new">SQLbolt - SQL lessons</a>
-</details>
-
-## Experience
-
-  - Google data analytics professional certificate
-  - Completed Khan Academy - Intro to SQL Course
-  - Finished the SQLBolt - Learn SQL Training
-  - Case Study 'Data with Danny' 8 Week SQL Challenge
+<br>
+:arrow_right_hook: - Refreshed foundational understanding of SQL and discovered context variations among SQL-powered platforms.
+<br>
 
 ----
 ### View My Other Projects
@@ -41,6 +62,7 @@ All of my SQL code and projects will be located here.
 ----
 <a href="https://github.com/CameronCSS/PersonalProjects/blob/main/README.md"><strong>« Back to Portfolio</strong></a>
 
+<a name="Contact"></a> 
 ## Contact Me
 
 <div style="display: flex;">
@@ -60,3 +82,4 @@ All of my SQL code and projects will be located here.
   </p>
 </div>
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
