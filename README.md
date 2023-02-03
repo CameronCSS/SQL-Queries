@@ -45,17 +45,32 @@
 <summary>Data Analysis / Visuals Projects</summary>
 <a href="https://github.com/CameronCSS/Data-Analysis/tree/main/Power-BI-Dashboards" target="new">Power BI Dashboards</a>
 <br>
-<a href="https://cameroncss.github.io/Data-Analysis/Netflix/index.html" target="new">Netflix Movies and TV Shows</a><em> *Interactive Tableau Dashboard</em>
+:arrow_right_hook: - Collection of my Power BI projects/dashboards with detailed analysis and visually appealing data.
 <br>
+<br>
+<a href="https://cameroncss.github.io/Data-Analysis/Netflix/index.html" target="new">Netflix Movies and TV Shows</a>
+<br>
+:arrow_right_hook: - Built out multiple sheets to display on a single visual, and created an interactive dashboard.
+<br>	
+<br>	
 <a href="https://github.com/CameronCSS/Data-Analysis/tree/main/Sales%20Performance%20Review" target="new">Sales Performance Review</a>
+<br>
+:arrow_right_hook: - Used Power BI to clean and organize data to present to upper management about previous years sales performance.
+<br>	
 <br>
 <a href="https://github.com/CameronCSS/Data-Analysis/tree/main/SLC%20civilian%20complaints" target="new">SLC civilian complaints</a>
   <br>
+:arrow_right_hook: - Utilized API calls to gather data from public sources. Built a local DB to use in Power BI to uncover valuable insights.
   <br>
+</details>
 
+<br>
+	
 <details>
 <summary>Programming Projects / Code</summary>
 <a href="https://github.com/CameronCSS/Programming-Languages/tree/main/Python%20Wage%20Calculator" target="new">Python Wage Calculator</a>
+
+:arrow_right_hook: - Learned the power of Pandas and PyQt5 libraries. Also learned the importance of notating code for Bug fixing in the future.
 </details>
     
 
