@@ -52,11 +52,6 @@
 <br>
 &nbsp; &nbsp;:arrow_right_hook: - Built out multiple sheets to display on a single visual, and created an interactive dashboard.
 <br>	
-<br>	
-<a href="https://github.com/CameronCSS/Data-Analysis/tree/main/Sales%20Performance%20Review" target="new">Sales Performance Review</a>
-<br>
-&nbsp; &nbsp;:arrow_right_hook: - Used Power BI to clean and organize data to present to upper management about previous years sales performance.
-<br>	
 <br>
 <a href="https://github.com/CameronCSS/Data-Analysis/tree/main/SLC%20civilian%20complaints" target="new">SLC civilian complaints</a>
   <br>
