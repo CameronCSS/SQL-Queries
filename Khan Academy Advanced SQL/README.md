@@ -1,5 +1,12 @@
 <a name="readme-top"></a>
 
+<div align="center">
+
+  <img src="https://user-images.githubusercontent.com/121735588/219919058-e18cb926-5047-4088-910a-69aa333f56c8.png" alt="SQLLogo" height="200">
+
+
+</div>
+
 # Khan Academy: Advanced SQL Queries - Challenges
 
 #### Queries begin with basic concepts and progress to more complex topics as we progress.
