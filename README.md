@@ -40,7 +40,8 @@
 
 ----
 ### View My Other Projects
-    
+<sub>**Click arrow to view content*</sub>
+
 <details>
 <summary>Data Analysis / Visuals Projects</summary>
 <a href="https://github.com/CameronCSS/Data-Analysis/tree/main/Power-BI-Dashboards" target="new">Power BI Dashboards</a>
