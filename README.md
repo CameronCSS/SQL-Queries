@@ -16,7 +16,8 @@
 
 
 ## SQL Experience
-:ballot_box_with_check: Google data analytics professional certificate
+:ballot_box_with_check: Data cleaning and data exploring using microsoft sql server
+<br> :ballot_box_with_check: Google data analytics professional certificate
  <br> :ballot_box_with_check: Completed Khan Academy - Intro to SQL Course
  <br> :ballot_box_with_check: Finished the SQLBolt - Learn SQL Training
  <br> :ballot_box_with_check: Case Study 'Data with Danny' 8 Week SQL Challenge
