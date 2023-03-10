@@ -64,20 +64,25 @@
 	
 <details>
 <summary>Programming Projects / Code</summary>
+
+## Python Projects
 <a href="https://github.com/CameronCSS/Programming-Languages/tree/main/Python%20Wage%20Calculator" target="new">Python Wage Calculator</a>
-<br>
+
 &nbsp; &nbsp;:arrow_right_hook: - Learned the power of Pandas and PyQt5 libraries. Also learned the importance of notating code for Bug fixing in the future.
-<br>
-<br>
-<a href="https://github.com/CameronCSS/Programming-Languages/tree/main/Javascript" target="new">Javascript Code</a>
-<br>
-&nbsp; &nbsp;:arrow_right_hook: - A repo full of my Javascript code. Lots of custom stuff made to work on Carrd websites.	
-<br>
-<br>
+
+## R* Projects
+<a href="https://github.com/CameronCSS/Programming-Languages/tree/main/Comparing%20Phone%20Prices%20in%20R" target="new">Comparing Phone Prices in R</a>
+
+&nbsp; &nbsp;:arrow_right_hook: - Explored and cleaned a cell phone price dataset found on [Kaggle](https://www.kaggle.com/datasets/rkiattisak/mobile-phone-price).
+
 <a href="https://github.com/CameronCSS/Programming-Languages/tree/main/R-Basics" target="new">R* Basics</a>
-<br>
+
 &nbsp; &nbsp;:arrow_right_hook: - Made a full breakdown detailing the basic functions and uses of the R* programming language.
-<br>
+
+## Javascript Projects
+<a href="https://github.com/CameronCSS/Programming-Languages/tree/main/Javascript" target="new">Javascript Code</a>
+
+&nbsp; &nbsp;:arrow_right_hook: - A repo full of my Javascript code. Lots of custom stuff made to work on Carrd websites.
 </details>
     
 
