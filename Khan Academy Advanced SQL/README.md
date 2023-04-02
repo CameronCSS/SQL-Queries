@@ -9,7 +9,7 @@
 
 # Khan Academy: Advanced SQL Queries - Challenges
 
-#### Queries begin with basic concepts and progress to more complex topics as we progress.
+#### Queries begin with basic concepts and advance to more complex topics as we progress.
 ##### _*Feel free to scroll to the bottom for the most advanced queries from this course_
 
 ---
