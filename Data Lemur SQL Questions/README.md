@@ -17,17 +17,17 @@
  
 ## Data Lemur Questions
 
-<a href="https://github.com/CameronCSS/SQL-Queries/tree/main/8%20Week%20SQL%20Challenge%20%23%201" target="new">EASY SQL questions</a>
+<a href="https://github.com/CameronCSS/SQL-Queries/tree/main/Data%20Lemur%20SQL%20Questions/EASY%20SQL%20questions" target="new">EASY SQL questions</a>
 <br>
 &nbsp; &nbsp;:arrow_right_hook: - Most of these are basic SQL questions with a few CASE WHEN and CTEs used to solve them.
 <br>
 <br>
-<a href="https://github.com/CameronCSS/SQL-Queries/tree/main/Khan%20Academy%20Advanced%20SQL" target="new">MEDIUM SQL questions</a>
+<a href="https://github.com/CameronCSS/SQL-Queries/tree/main/Data%20Lemur%20SQL%20Questions/MEDIUM%20SQL%20questions" target="new">MEDIUM SQL questions</a>
 <br>
 &nbsp; &nbsp;:arrow_right_hook: - These get more advanced. lots of CTEs, subqueries, and uncommon SQL functions are used.
 <br>
 <br>
-<a href="https://github.com/CameronCSS/SQL-Queries/tree/main/SQLbolt%20-%20SQL%20lessons" target="new">HARD SQL questions</a>
+<a href="https://github.com/CameronCSS/SQL-Queries/tree/main/Data%20Lemur%20SQL%20Questions/The%20HARD%20SQL%20Questions" target="new">HARD SQL questions</a>
 <br>
 &nbsp; &nbsp;:arrow_right_hook: - Hard SQL questions with multiple joins, subqueries, aggregations, as well as advanced SQL functions and optimization techniques.
 <br>
