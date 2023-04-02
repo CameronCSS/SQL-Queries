@@ -29,6 +29,11 @@
 &nbsp; &nbsp;:arrow_right_hook: - Explored complex queries to clean data, compute customer figures, and organize data in unusual ways.
 <br>
 <br>
+<a href="https://github.com/CameronCSS/SQL-Queries/tree/main/Data%20Lemur%20SQL%20Questions" target="new">Data Lemur SQL Questions</a>
+<br>
+&nbsp; &nbsp;:arrow_right_hook: - SQL interview questions using CTEs, multiple joins, subqueries, aggregations, and other advanced SQL functions.
+<br>
+<br>
 <a href="https://github.com/CameronCSS/SQL-Queries/tree/main/Khan%20Academy%20Advanced%20SQL" target="new">Khan Academy Advanced SQL</a>
 <br>
 &nbsp; &nbsp;:arrow_right_hook: - Expand SQL knowledge about combining tables with JOINs and using multiple queries at once.
