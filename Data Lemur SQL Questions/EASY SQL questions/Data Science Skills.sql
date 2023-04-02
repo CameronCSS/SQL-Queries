@@ -6,15 +6,21 @@
 
 
 -- candidates Example Input: --
-   | candidate_id	 |    skill    |
-        123        |    Python
-        123        |    Tableau
-        123        |    PostgreSQL
-        234        |    R
-        234        |    PowerBI
-        234        |    SQL Server
-        345        |    Python
-        345        |    Tableau
+╔══════════════╦════════════╗
+║ candidate_id ║ skill      ║
+╠══════════════╬════════════╣
+║ 123          ║ Python     ║
+╠══════════════╬════════════╣
+║ 123          ║ Tableau    ║
+╠══════════════╬════════════╣
+║ 123          ║ PostgreSQL ║
+╠══════════════╬════════════╣
+║ 234          ║ R          ║
+╠══════════════╬════════════╣
+║ 234          ║ PowerBI    ║
+╠══════════════╬════════════╣
+║ 234          ║ SQL Server ║
+╚══════════════╩════════════╝
         
 
 -- Solution: --
@@ -26,6 +32,10 @@ GROUP BY candidate_id
 HAVING COUNT(DISTINCT skill) = 3
 
 -- Output --
-| candidate_id |
-      123
-      147
+╔══════════════╗
+║ candidate_id ║
+╠══════════════╣
+║ 123          ║
+╠══════════════╣
+║ 147          ║
+╚══════════════╝
