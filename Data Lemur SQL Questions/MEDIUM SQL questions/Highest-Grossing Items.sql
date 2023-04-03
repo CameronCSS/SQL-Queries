@@ -3,7 +3,7 @@
 -- Identify the top two highest-grossing products within each category in 2022. Output the category, product, and total spend.
 
 
--- product_spend Example Table: --
+               -- product_spend Example Table: --
 |  category |     product     | user_id |  spend |   transaction_date  |
 |:---------:|:---------------:|:-------:|:------:|:-------------------:|
 | appliance |   refrigerator  |   165   | 246.00 | 12/26/2021 12:00:00 |
