@@ -19,10 +19,7 @@ GROUP BY pages.page_id
 HAVING COUNT(liked_date) = 0
 
 -- Output: --
-╔═════════╗
-║ page_id ║
-╠═════════╣
-║ 20701   ║
-╠═════════╣
-║ 32728   ║
-╚═════════╝
+| page_id |
+|---------|
+| 20701   |
+| 32728   |
