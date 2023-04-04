@@ -7,11 +7,12 @@
 -- action_date is the date when the user activated their account and confirmed their sign-up through the text.
 
 
-      -- emails Example Input: --
-| email_id | user_id |     signup_date     |
-|:--------:|:-------:|:-------------------:|
-|    125   |   7771  | 06/14/2022 00:00:00 |
-|    433   |   1052  | 07/09/2022 00:00:00 |
+      -- emails Example Input: --                                   -- texts Example Input: --
+| email_id | user_id |     signup_date     |       | text_id | email_id | signup_action |     action_date     |
+|:--------:|:-------:|:-------------------:|       |:-------:|:--------:|:-------------:|:-------------------:|
+|    125   |   7771  | 06/14/2022 00:00:00 |       |   6878  |    125   |   Confirmed   | 06/14/2022 00:00:00 |
+|    433   |   1052  | 07/09/2022 00:00:00 |       |   6997  |    433   | Not Confirmed | 07/09/2022 00:00:00 |
+|          |         |                     |       |   7000  |    433   |   Confirmed   | 07/10/2022 00:00:00 |
 
 
 -- Solution: --
