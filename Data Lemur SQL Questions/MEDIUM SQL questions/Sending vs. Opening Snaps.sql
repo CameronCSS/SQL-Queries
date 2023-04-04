@@ -20,14 +20,6 @@
 |     1413    |   456   |      send     |    5.67    | 06/23/2022 12:00:00 |           |   789   |    21-25   |
 
 
--- age_breakdown Example Input: --
-   | user_id | age_bucket |
-   |:-------:|:----------:|
-   |   123   |    31-35   |
-   |   456   |    26-30   |
-   |   789   |    21-25   |
-
-
 -- Solution: --
 SELECT age_breakdown.age_bucket, 
 ROUND( SUM(send_time) / (SUM(send_time) + SUM(open_time)) * 100, 2)::numeric AS send_perc, 
