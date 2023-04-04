@@ -12,12 +12,12 @@
 -- To avoid integer division in percentages, multiply by 100.0 and not 100.
 
 
--- activities Example Table: --
-| activity_id | user_id | activity_type | time_spent |    activity_date    |
-|:-----------:|:-------:|:-------------:|:----------:|:-------------------:|
-|     7274    |   123   |      open     |    4.50    | 06/22/2022 12:00:00 |
-|     2425    |   123   |      send     |    3.50    | 06/22/2022 12:00:00 |
-|     1413    |   456   |      send     |    5.67    | 06/23/2022 12:00:00 |
+                      -- activities Example Table: --                              -- age_breakdown Example Table: --
+| activity_id | user_id | activity_type | time_spent |    activity_date    |           | user_id | age_bucket |
+|:-----------:|:-------:|:-------------:|:----------:|:-------------------:|           |:-------:|:----------:|
+|     7274    |   123   |      open     |    4.50    | 06/22/2022 12:00:00 |           |   123   |    31-35   |
+|     2425    |   123   |      send     |    3.50    | 06/22/2022 12:00:00 |           |   456   |    26-30   |
+|     1413    |   456   |      send     |    5.67    | 06/23/2022 12:00:00 |           |   789   |    21-25   |
 
 
 -- age_breakdown Example Input: --
