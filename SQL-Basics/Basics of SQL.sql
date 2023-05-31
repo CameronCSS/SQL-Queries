@@ -7,7 +7,7 @@ FROM dataset_1;
 SELECT *
 FROM dataset_1
 WHERE passanger = "Alone"; 
--- I know its mispelled. Its mispelled in the Dataset.
+-- I know passanger is mispelled. Its mispelled in the Dataset.
 
 
 -- Average (Temperature by Destination)
