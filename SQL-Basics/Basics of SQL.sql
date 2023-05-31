@@ -1,4 +1,9 @@
--- BASIC WHERE
+-- Basic SELECT. * represents ALL data. its a simple way to get all data from the db
+SELECT *
+FROM dataset_1;
+
+
+-- Basic WHERE
 SELECT *
 FROM dataset_1
 WHERE passanger = "Alone"; 
@@ -114,7 +119,7 @@ SELECT
 FROM dataset_1 d 
 
 
--- Ranking shows ties, but skips to Actual tied count on next rank
+-- Ranking shows ties, but skips to Actual tied count on next rank. I.E. 1,255,768 etc.
 SELECT
 	destination,
 	weather,
@@ -122,7 +127,7 @@ SELECT
 FROM dataset_1 d;
 
 
--- Dense Rank shows ties but goes to next Rank 1,2,3, etc. no matter how many ties it goes to the next Counted number.
+-- Dense Rank shows ties but goes to next Rank in order 1,2,3, etc. no matter how many ties it goes to the next Counted number.
 SELECT
 	destination,
 	weather,
@@ -130,7 +135,8 @@ SELECT
 FROM dataset_1 d;
 	
 
--- Ntiles
+-- Ntiles: 
+-- The NTILE function divides the result set into approximately equal-sized buckets or groups. In this case, it divides the rows into 50 groups.
 SELECT 
 	time, 
 	NTILE (50) OVER (ORDER BY time)
