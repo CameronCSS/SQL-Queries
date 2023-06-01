@@ -1,8 +1,7 @@
 <a name="readme-top"></a>
 <div align="center">
 
-  <img src="https://user-images.githubusercontent.com/121735588/216512133-876af3f7-ca41-4c29-aa59-b24412e2fd7d.png" width="200" height="200">
-
+  <img src="https://github.com/CameronCSS/SQL-Queries/assets/121735588/eeb010dc-f07d-460f-a63b-c7f7c6eae284" width="200" height="200">
 
 
   <h2 align="center">8 Week SQL Challenge</h2>
