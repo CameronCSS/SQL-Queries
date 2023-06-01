@@ -17,7 +17,7 @@
 ### You can view the full list of challenges [HERE](https://8weeksqlchallenge.com/)
 
 ## 8 Week SQL Challenges
-* Week 1: [Case Study #1 - Danny's Diner]()
+* Week 1: [Case Study #1 - Danny's Diner]
 * Week 2: Case Study #2 - Pizza Runner
 * Week 3: Case Study #3 - Foodie-Fi
 * Week 4: Case Study #4 - Data Bank
