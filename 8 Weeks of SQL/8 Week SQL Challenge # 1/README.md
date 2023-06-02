@@ -103,10 +103,13 @@ VALUES
   **1. What is the total amount each customer spent at the restaurant?**
 
 ```sql
-SELECT customer_id, SUM(price) AS total_spent
-  FROM sales
-JOIN menu ON sales.product_id = menu.product_id
-  GROUP BY customer_id;
+SELECT 
+	customer_id,
+	SUM(price) AS total_spent
+FROM sales s 
+JOIN menu m 
+ON s.product_id = m.product_id 
+GROUP BY customer_id;
 ```
 ```
 -- This query will join the sales and menu tables on the product_id column
@@ -119,8 +122,10 @@ JOIN menu ON sales.product_id = menu.product_id
   **2. How many days has each customer visited the restaurant?**
 
 ```sql
-SELECT customer_id, COUNT(DISTINCT order_date) as days_visited
-FROM sales
+SELECT 
+	customer_id,
+	COUNT(DISTINCT order_date) AS days_visited
+FROM sales s
 GROUP BY customer_id;
 ```
 ```
