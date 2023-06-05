@@ -11,7 +11,9 @@
 ## Introduction
 Danny’s Diner is in need of your assistance to help the restaurant stay afloat - the restaurant has captured some very basic data from their few months of operation but have no idea how to use their data to help them run the business.
 
-![image](https://user-images.githubusercontent.com/121735588/211134729-5cd5bd4d-8420-4f0e-af9e-d77394265056.png)
+<div align="center">
+<img src="https://user-images.githubusercontent.com/121735588/211134729-5cd5bd4d-8420-4f0e-af9e-d77394265056.png" height="400">
+	</div>
 
 
 ### Problem Statement
