@@ -411,6 +411,7 @@ GROUP BY p.customer_id;
 ![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/553d30f7-8cea-4aa9-9493-988ae6623e94)
 
 <br>
+
 ## Conclusion
 - This case study demonstrates how to use common table expressions (CTEs) and JOIN clauses in SQL to combine data from multiple tables and perform calculations on the resulting data set.
 - CTEs are useful for creating temporary result sets that can be used in a SELECT, INSERT, UPDATE, DELETE, or CREATE VIEW statement. They can help to simplify complex queries by breaking them down into smaller, more manageable pieces.
