@@ -235,63 +235,104 @@ VALUES
   **1. How many pizzas were ordered?**
 
 ```sql
-
+SELECT 
+	COUNT(pizza_id) AS pizzas_ordered
+FROM customer_orders co 
 ```
 ```
--- Comments
+-- We just count the count of pizza_id which will tell us how many pizzas total were ordered
 ```
-![image]()
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/6eb0e0e1-e252-4671-bc3e-f6473e07ffc9)
 <br>
 
   **2. How many unique customer orders were made?**
 
 ```sql
-
+SELECT 
+	COUNT(DISTINCT order_time) AS Orders 
+FROM customer_orders co 
 ```
 ```
--- Comments
+-- We use distnct count to avoide duplicate order listings, which there a few of in the db
 ```
-![image]()
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/8a15173a-ae78-4dab-87c9-be02e7b3b9fc)
 <br>
   **3. How many successful orders were delivered by each runner?**
   
 ```sql
-
+SELECT
+	COUNT(duration) AS orders_delivered
+FROM runner_orders ro 
 ```
 ```
--- Comments
+-- We could count the amount of orders from pickup_time, distance, or duration since all show the same results
+-- We could also just exclude orders that were cancelled since it looks like those were the only orders not delivered
 ```
-![image]()
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/03dbcd19-b02a-43e5-85dd-3250182483bf)
 <br>
   **4. How many of each type of pizza was delivered?**
   
 ```sql
-
+SELECT 
+	pizza_id,
+	COUNT(pizza_id) AS num_delivered
+FROM customer_orders co
+JOIN runner_orders ro 
+	ON ro.order_id = co.order_id
+WHERE duration <> 'null'
+GROUP BY pizza_id
 ```
 ```
--- Comments
+-- We need to join our runner orders with our customer orders so we only count pizzas that were delivered
+-- To find pizzas actually delivered we just exclude duration that was NULL
+-- We have to find the actual value 'null' since it was entered in the db and that value is not a true NULL
+-- We THEN count the pizzas, and GROUP by pizza id so we get the total for each type of pizza
 ```
-![image]()
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/a7f3d3be-e022-4695-a42b-bf09fe635347)
 <br>
   **5. How many Vegetarian and Meatlovers were ordered by each customer?**
   
 ```sql
-
+SELECT 
+	pizza_name,
+	COUNT(co.pizza_id) AS num_ordered
+FROM pizza_names pn
+JOIN customer_orders co
+	ON co.pizza_id = pn.pizza_id  
+GROUP BY pizza_name
 ```
 ```
--- Comments
+-- We join the pizza name table so we can see which pizza_id is meat and which is Vegetarian
+-- We count the number of pizzas ordered in our orders table
+-- NOTE: This counts all the pizzas ordered, not just the ones that were succesfully delivered
 ```
-![image]()
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/426713a0-d0f5-47bc-9698-d2c30db84100)
 <br>
   **6. What was the maximum number of pizzas delivered in a single order?**
   
 ```sql
-
+SELECT 
+    order_id,
+    MAX(pizza_count) AS max_pizza_delivered
+FROM (
+    SELECT 
+        co.order_id,
+        COUNT(co.pizza_id) AS pizza_count
+    FROM customer_orders co
+    JOIN runner_orders ro 
+    	ON co.order_id = ro.order_id
+    WHERE duration <> 'null'
+    GROUP BY co.order_id
+) AS a
 ```
 ```
--- Comments
+-- We can create a CTE or a subquery for this task
+-- We want to count all the pizzas, on orderes that were delivered
+-- This means removing any of the 'null' values
+-- Group by order_id since we want the max delivered in a single order
+-- Pull the max number of pizzas from our subquery and display the results with easy to understand aliases
 ```
-![image]()
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/6a764a3e-3951-47a7-964d-1f841f08c7f4)
 <br>
   **7. For each customer, how many delivered pizzas had at least 1 change and how many had no changes?**
   
