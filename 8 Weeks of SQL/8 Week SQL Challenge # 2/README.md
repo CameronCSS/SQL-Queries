@@ -17,8 +17,9 @@ Danny was sold on the idea, but he knew that pizza alone was not going to help h
 
 Danny started by recruiting “runners” to deliver fresh pizza from Pizza Runner Headquarters (otherwise known as Danny’s house) and also maxed out his credit card to pay freelance developers to build a mobile app to accept orders from customers.
 
-![image](https://user-images.githubusercontent.com/121735588/211134729-5cd5bd4d-8420-4f0e-af9e-d77394265056.png)
-
+<div align="center">
+<img src="https://github.com/CameronCSS/SQL-Queries/assets/121735588/7e5119cc-a94c-432b-8bfa-ab4d177b78dd" height="400">
+	</div>
 
 ### Case Study Questions
 This case study has LOTS of questions - they are broken up by area of focus including:
@@ -153,7 +154,8 @@ VALUES
 
 ## Relationship Diagram
 
-![image](https://user-images.githubusercontent.com/121735588/211181303-9898c3da-0749-4f4e-ad98-ed368dad809f.png)
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/c7d62633-d8b1-4461-88e8-b899171b8f46)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
