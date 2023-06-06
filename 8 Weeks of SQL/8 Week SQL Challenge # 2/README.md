@@ -337,12 +337,52 @@ FROM (
   **7. For each customer, how many delivered pizzas had at least 1 change and how many had no changes?**
   
 ```sql
+WITH changes AS (
+	SELECT
+		order_id,
+		customer_id,
+		COUNT(*) AS changes
+	FROM customer_orders
+	WHERE order_id NOT IN (
+		SELECT order_id
+		FROM customer_orders
+		WHERE exclusions IN ('', 'null', NULL) AND extras IN ('', 'null', NULL)
+		GROUP BY order_id
+	)
+	GROUP BY customer_id
 
+),
+no_change AS (
+	SELECT 
+		order_id,
+		customer_id,
+		COUNT(*) AS no_changes
+	FROM customer_orders co
+	WHERE exclusions IN ('', 'null', NULL) AND extras IN ('', 'null', NULL)
+	GROUP BY customer_id
+)
+
+
+SELECT 
+	co.customer_id, 
+	COALESCE(changes, 0) AS changes, 
+	COALESCE(no_changes, 0) AS no_changes
+FROM customer_orders co 
+LEFT JOIN changes c
+	ON co.customer_id = c.customer_id
+LEFT JOIN no_change n
+	ON co.customer_id = n.customer_id
+GROUP BY co.customer_id
 ```
 ```
--- Comments
+-- First we need to count the changes made by each customer
+-- Exclusions and Extras are changes customers asked for
+-- We then need to count the customer orders that had NO changes
+-- We combine and count these tables together using the original customer_id table
+-- Coalesce is used to fill NULL values from our counts to be a 0 instead
+-- Everything is grouped by customer_id so we can see final counts of changes and No changes
 ```
-![image]()
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/028a898e-206d-4739-905c-575a29515ce9)
 <br>
   **8. How many pizzas were delivered that had both exclusions and extras?**
   
