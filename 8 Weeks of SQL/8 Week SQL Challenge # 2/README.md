@@ -336,32 +336,45 @@ FROM (
 <br>
   **7. For each customer, how many delivered pizzas had at least 1 change and how many had no changes?**
   
+* Spent way too long trying to brute force a method that would properly count all the different formats of Null, 'null', and Blanks When I finally realized I should just clean the data
+
+ _*Code for updating the table so all the empty values are NULL and are easier to count*_
+```sql
+UPDATE customer_orders
+SET exclusions = CASE WHEN exclusions IN ('', 'null') THEN NULL ELSE exclusions END,
+    extras = CASE WHEN extras IN ('', 'null') THEN NULL ELSE extras END
+WHERE exclusions IN ('', 'null') OR extras IN ('', 'null');
+```
+
+*Updated Table*
+<br>
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/fa984292-5955-45af-8127-a319d85787b6)
+
+*Code for the updated table*
+<br>
 ```sql
 WITH changes AS (
 	SELECT
-		order_id,
+		co.order_id,
 		customer_id,
-		COUNT(*) AS changes
-	FROM customer_orders
-	WHERE order_id NOT IN (
-		SELECT order_id
-		FROM customer_orders
-		WHERE exclusions IN ('', 'null', NULL) AND extras IN ('', 'null', NULL)
-		GROUP BY order_id
-	)
+		COUNT(order_time) AS changes
+	FROM customer_orders co
+	JOIN runner_orders ro
+		ON ro.order_id = co.order_id
+	WHERE duration <> 'null' AND exclusions IS NOT NULL OR extras IS NOT NULL
 	GROUP BY customer_id
-
 ),
 no_change AS (
 	SELECT 
-		order_id,
+		co.order_id,
 		customer_id,
-		COUNT(*) AS no_changes
+		COUNT(order_time) AS no_changes
 	FROM customer_orders co
-	WHERE exclusions IN ('', 'null', NULL) AND extras IN ('', 'null', NULL)
+	JOIN runner_orders ro
+		ON ro.order_id = co.order_id
+	WHERE duration <> 'null' AND exclusions IS NULL AND extras IS NULL
 	GROUP BY customer_id
 )
-
 
 SELECT 
 	co.customer_id, 
@@ -377,12 +390,13 @@ GROUP BY co.customer_id
 ```
 -- First we need to count the changes made by each customer
 -- Exclusions and Extras are changes customers asked for
+-- Since we are looking for pizzas that were delivered we need to JOIN the runner table and exclude undelivered pizza
 -- We then need to count the customer orders that had NO changes
--- We combine and count these tables together using the original customer_id table
+-- We combine and count these temp tables together using the original customer_id table
 -- Coalesce is used to fill NULL values from our counts to be a 0 instead
--- Everything is grouped by customer_id so we can see final counts of changes and No changes
+-- Everything is grouped by customer_id so we can see final counts of changes and No changes per customer
 ```
-![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/028a898e-206d-4739-905c-575a29515ce9)
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/33ff8d15-4f36-4e40-8e77-ef823857bb21)
 <br>
   **8. How many pizzas were delivered that had both exclusions and extras?**
   
