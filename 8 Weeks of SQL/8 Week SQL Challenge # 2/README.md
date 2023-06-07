@@ -228,6 +228,9 @@ VALUES
 
 ----
 
+# NOTE: All the answers were written in SQLite. This is my first time using it and I had to look up a lot of the Syntax since it is so much different than other SQL packages.
+I definitely prefer using MySQL or Postgresql
+
 ## Answers
 
 ### A. Pizza Metrics
@@ -401,32 +404,64 @@ GROUP BY co.customer_id
   **8. How many pizzas were delivered that had both exclusions and extras?**
   
 ```sql
-
+SELECT
+	co.order_id,
+	customer_id
+FROM customer_orders co
+JOIN runner_orders ro
+	ON ro.order_id = co.order_id
+WHERE duration <> 'null' AND exclusions IS NOT NULL AND extras IS NOT NULL
+GROUP BY customer_id
 ```
 ```
--- Comments
+-- This question can be answers by slightly altering our previous query
+-- We only need to find delivered orders that had BOTH exclusions and extras
+-- Only one order meets this criteria
 ```
-![image]()
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/ef400d33-fd19-4897-96d6-91b631606b9f)
 <br>
   **9. What was the total volume of pizzas ordered for each hour of the day?**
   
 ```sql
-
+SELECT
+	STRFTIME('%H', order_time) as Hourly_Orders,
+	COUNT(order_id) as TotalPizzaOrdered
+FROM customer_orders
+GROUP BY Hourly_Orders
 ```
 ```
--- Comments
+-- We can use a substr to extract the digits we want
+-- Or since we are using SQLite we can extract the Hour from the datetime using STRFTIME, and %H to extract the HOUR.
+-- We count the orders to get our answer
 ```
-![image]()
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/7640eb08-e7b6-4130-b4bf-590d944347d4)
 <br>
   **10. What was the volume of orders for each day of the week?**
   
 ```sql
-
+SELECT
+	COUNT(order_id) as TotalPizzaOrdered,
+	CASE strftime('%w', order_time)
+		WHEN '0' THEN 'Sunday'
+		WHEN '1' THEN 'Monday'
+		WHEN '2' THEN 'Tuesday'
+		WHEN '3' THEN 'Wednesday'
+		WHEN '4' THEN 'Thursday'
+		WHEN '5' THEN 'Friday'
+		WHEN '6' THEN 'Saturday'
+	ELSE 'Unknown'
+	END AS DayOfWeek
+FROM customer_orders
+GROUP BY DayOfWeek
+ORDER BY TotalPizzaOrdered desc
 ```
 ```
--- Comments
+-- The query will be similar to the one we used to find the orders per Hour
+-- However, this gives us the Numbered day of the week. If we want the actual Day we need to use CASE WHEN
+-- We use Case When to get the actual day of the week and get our final results
+-- We order by the amount of pizza so the Top days are first
 ```
-![image]()
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/d4b4b1ee-9713-4bf6-8511-ec2f1e4ad3a3)
 <br>
 <br>
 <br>
@@ -436,33 +471,70 @@ GROUP BY co.customer_id
   **1. How many runners signed up for each 1 week period? (i.e. week starts 2021-01-01)**
 
 ```sql
-
+SELECT
+	CAST((julianday(registration_date) - julianday('2021-01-01')) / 7 + 1 AS INTEGER) AS Week_Registered,
+    COUNT(runner_id) AS Runners_Count
+FROM
+    runners
+GROUP BY
+    Week_Registered
 ```
 ```
--- Comments
+-- We need to use the runner registration table to answer this question
+-- We then divide our answer up by weeks again, but this time we need to use julianday function in SQLite5
+-- Julianday can be used to count the number of days from a specific starting point
+-- We then divide that number by 7 to give us the amount of weeks as a round integer
+-- We add 1 to this answer so the first week isnt 0
 ```
-![image]()
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/259e9ca1-e6c9-47a7-a1c9-23e275603b0c)
 <br>
 
   **2. What was the average time in minutes it took for each runner to arrive at the Pizza Runner HQ to pickup the order?**
 
 ```sql
-
+SELECT
+    runner_id,
+    ROUND(AVG((julianday(pickup_time) - julianday(order_time)) * 24 * 60), 1) AS AvgTime
+FROM runner_orders
+INNER JOIN customer_orders ON customer_orders.order_id = runner_orders.order_id
+WHERE duration <> 'null'
+GROUP BY runner_id
+ORDER BY runner_id
 ```
 ```
--- Comments
+-- We need to use the customer order and runner order table to calculate our answer from time of order to time of pickup
+-- Because SQLite is limited with datetime functions we need to use julianday again
+-- We find orders that were actually picked up and delivered, so we ignore duration that is null
+-- Group by and Order by runner_id so we can see the stats of each one
 ```
-![image]()
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/1ae3d829-1a1e-4c44-9f3a-9bf722acbf0e)
 <br>
   **3. Is there any relationship between the number of pizzas and how long the order takes to prepare?**
   
 ```sql
-
+SELECT
+    pizzas_ordered,
+    AVG(AvgTime) AS AverageTime
+FROM (
+    SELECT
+        COUNT(co.pizza_id) AS pizzas_ordered,
+        ROUND((strftime('%s', ro.pickup_time) - strftime('%s', co.order_time)) / 60.0) AS AvgTime
+    FROM runner_orders ro
+    INNER JOIN customer_orders co ON co.order_id = ro.order_id
+    WHERE ro.duration <> 'null'
+    GROUP BY ro.order_id
+) AS subquery
+GROUP BY pizzas_ordered
+ORDER BY pizzas_ordered
 ```
 ```
--- Comments
+-- We are going to use a similar query to our last to find runner times
+-- We will be comparing times to the amount of pizzas for each order
+-- Again we dont want to count orders that were never picked up
+-- Looking at our results we can definitely see that the more pizza ordered the longer it takes for the runner
+-- To GROUP BY our aggregate count we can simply use a subquery select. (Remember to alias your subquery)
 ```
-![image]()
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/b4e7cda2-b97c-424c-93b2-518e01b3118d)
 <br>
   **4. What was the average distance travelled for each customer?**
   
