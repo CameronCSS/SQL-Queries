@@ -17,7 +17,7 @@
 
 ## 8 Week SQL Challenges
 * Week 1: [Case Study #1 - Danny's Diner](https://github.com/CameronCSS/SQL-Queries/tree/main/8%20Weeks%20of%20SQL/8%20Week%20SQL%20Challenge%20%23%201)
-* Week 2: Case Study #2 - Pizza Runner
+* Week 2: [Case Study #2 - Pizza Runner](https://github.com/CameronCSS/SQL-Queries/tree/main/8%20Weeks%20of%20SQL/8%20Week%20SQL%20Challenge%20%23%202)
 * Week 3: Case Study #3 - Foodie-Fi
 * Week 4: Case Study #4 - Data Bank
 * Week 5: Case Study #5 - Data Mart
