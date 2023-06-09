@@ -24,9 +24,15 @@
  
 ## SQL Projects
 
-<a href="https://github.com/CameronCSS/SQL-Queries/tree/main/8%20Weeks%20of%20SQL" target="new">8 Weeks of SQL</a>
-<br>
-&nbsp; &nbsp;:arrow_right_hook: - Explored complex queries to clean data, compute customer figures, and organize data in unusual ways.
+## 8 Week SQL Challenges
+* Week 1: [Case Study #1 - Danny's Diner](https://github.com/CameronCSS/SQL-Queries/tree/main/8%20Weeks%20of%20SQL/8%20Week%20SQL%20Challenge%20%23%201)
+* Week 2: [Case Study #2 - Pizza Runner](https://github.com/CameronCSS/SQL-Queries/tree/main/8%20Weeks%20of%20SQL/8%20Week%20SQL%20Challenge%20%23%202)
+* Week 3: Case Study #3 - Foodie-Fi
+* Week 4: Case Study #4 - Data Bank
+* Week 5: Case Study #5 - Data Mart
+* Week 6: Case Study #6 - Clique Bait
+* Week 7: Case Study #7 - Balanced Tree Clothing Co.
+* Week 8: Case Study #8 - Fresh Segments
 <br>
 <br>
 <a href="https://github.com/CameronCSS/SQL-Queries/tree/main/Data%20Lemur%20SQL%20Questions" target="new">Data Lemur SQL Questions</a>
