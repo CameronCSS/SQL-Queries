@@ -227,10 +227,6 @@ VALUES
 <br>
 
 ----
-
-# NOTE: All the answers were written in SQLite. This is my first time using it and I had to look up a lot of the Syntax since it is so much different than other SQL packages.
-I definitely prefer using MySQL or Postgresql
-
 ## Answers
 
 ### A. Pizza Metrics
