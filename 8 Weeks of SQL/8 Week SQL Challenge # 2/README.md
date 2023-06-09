@@ -256,7 +256,7 @@ SELECT
 FROM customer_orders co 
 ```
 ```
--- We use distnct count to avoide duplicate order listings, which there a few of in the db
+-- We use distinct count to avoide duplicate order listings, which there a few of in the db
 ```
 ![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/8a15173a-ae78-4dab-87c9-be02e7b3b9fc)
 <br>
@@ -284,6 +284,7 @@ JOIN runner_orders ro
 	ON ro.order_id = co.order_id
 WHERE duration <> 'null'
 GROUP BY pizza_id
+ORDER BY pizza_id
 ```
 ```
 -- We need to join our runner orders with our customer orders so we only count pizzas that were delivered
@@ -327,6 +328,9 @@ FROM (
     WHERE duration <> 'null'
     GROUP BY co.order_id
 ) AS a
+GROUP BY order_id
+ORDER BY max_pizza_delivered DESC
+LIMIT 1
 ```
 ```
 -- We can create a CTE or a subquery for this task
@@ -357,38 +361,36 @@ WHERE exclusions IN ('', 'null') OR extras IN ('', 'null');
 <br>
 ```sql
 WITH changes AS (
-	SELECT
-		co.order_id,
-		customer_id,
-		COUNT(order_time) AS changes
-	FROM customer_orders co
-	JOIN runner_orders ro
-		ON ro.order_id = co.order_id
-	WHERE duration <> 'null' AND exclusions IS NOT NULL OR extras IS NOT NULL
-	GROUP BY customer_id
+    SELECT
+        customer_id,
+        COUNT(order_time) AS changes
+    FROM customer_orders co
+    JOIN runner_orders ro
+        ON ro.order_id = co.order_id
+    WHERE duration <> 'null' AND (exclusions IS NOT NULL OR extras IS NOT NULL)
+    GROUP BY customer_id
 ),
 no_change AS (
-	SELECT 
-		co.order_id,
-		customer_id,
-		COUNT(order_time) AS no_changes
-	FROM customer_orders co
-	JOIN runner_orders ro
-		ON ro.order_id = co.order_id
-	WHERE duration <> 'null' AND exclusions IS NULL AND extras IS NULL
-	GROUP BY customer_id
+    SELECT 
+        customer_id,
+        COUNT(order_time) AS no_changes
+    FROM customer_orders co
+    JOIN runner_orders ro
+        ON ro.order_id = co.order_id
+    WHERE duration <> 'null' AND exclusions IS NULL AND extras IS NULL
+    GROUP BY customer_id
 )
-
 SELECT 
-	co.customer_id, 
-	COALESCE(changes, 0) AS changes, 
-	COALESCE(no_changes, 0) AS no_changes
+    co.customer_id, 
+    COALESCE(changes, 0) AS changes, 
+    COALESCE(no_changes, 0) AS no_changes
 FROM customer_orders co 
 LEFT JOIN changes c
-	ON co.customer_id = c.customer_id
+    ON co.customer_id = c.customer_id
 LEFT JOIN no_change n
-	ON co.customer_id = n.customer_id
-GROUP BY co.customer_id
+    ON co.customer_id = n.customer_id
+GROUP BY co.customer_id, changes, no_changes
+ORDER BY customer_id;
 ```
 ```
 -- First we need to count the changes made by each customer
@@ -399,7 +401,7 @@ GROUP BY co.customer_id
 -- Coalesce is used to fill NULL values from our counts to be a 0 instead
 -- Everything is grouped by customer_id so we can see final counts of changes and No changes per customer
 ```
-![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/33ff8d15-4f36-4e40-8e77-ef823857bb21)
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/f12c28dc-2745-475c-a947-39553d9fb028)
 <br>
   **8. How many pizzas were delivered that had both exclusions and extras?**
   
@@ -411,7 +413,7 @@ FROM customer_orders co
 JOIN runner_orders ro
 	ON ro.order_id = co.order_id
 WHERE duration <> 'null' AND exclusions IS NOT NULL AND extras IS NOT NULL
-GROUP BY customer_id
+GROUP BY customer_id, co.order_id
 ```
 ```
 -- This question can be answers by slightly altering our previous query
@@ -424,14 +426,14 @@ GROUP BY customer_id
   
 ```sql
 SELECT
-	STRFTIME('%H', order_time) as Hourly_Orders,
-	COUNT(order_id) as TotalPizzaOrdered
+    TO_CHAR(order_time, 'HH24') AS Hourly_Orders,
+    COUNT(order_id) AS TotalPizzaOrdered
 FROM customer_orders
 GROUP BY Hourly_Orders
+ORDER BY Hourly_Orders
 ```
 ```
--- We can use a substr to extract the digits we want
--- Or since we are using SQLite we can extract the Hour from the datetime using STRFTIME, and %H to extract the HOUR.
+-- We can use TO_CHAR to extract the digits we want
 -- We count the orders to get our answer
 ```
 ![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/7640eb08-e7b6-4130-b4bf-590d944347d4)
@@ -440,20 +442,20 @@ GROUP BY Hourly_Orders
   
 ```sql
 SELECT
-	COUNT(order_id) as TotalPizzaOrdered,
-	CASE strftime('%w', order_time)
-		WHEN '0' THEN 'Sunday'
-		WHEN '1' THEN 'Monday'
-		WHEN '2' THEN 'Tuesday'
-		WHEN '3' THEN 'Wednesday'
-		WHEN '4' THEN 'Thursday'
-		WHEN '5' THEN 'Friday'
-		WHEN '6' THEN 'Saturday'
-	ELSE 'Unknown'
-	END AS DayOfWeek
+    COUNT(order_id) AS TotalPizzaOrdered,
+    CASE EXTRACT(DOW FROM order_time)
+        WHEN 0 THEN 'Sunday'
+        WHEN 1 THEN 'Monday'
+        WHEN 2 THEN 'Tuesday'
+        WHEN 3 THEN 'Wednesday'
+        WHEN 4 THEN 'Thursday'
+        WHEN 5 THEN 'Friday'
+        WHEN 6 THEN 'Saturday'
+        ELSE 'Unknown'
+    END AS DayOfWeek
 FROM customer_orders
 GROUP BY DayOfWeek
-ORDER BY TotalPizzaOrdered desc
+ORDER BY TotalPizzaOrdered DESC, DayOfWeek desc;
 ```
 ```
 -- The query will be similar to the one we used to find the orders per Hour
@@ -472,17 +474,18 @@ ORDER BY TotalPizzaOrdered desc
 
 ```sql
 SELECT
-	CAST((julianday(registration_date) - julianday('2021-01-01')) / 7 + 1 AS INTEGER) AS Week_Registered,
-    COUNT(runner_id) AS Runners_Count
+    CAST((date_part('day', registration_date) - 1) / 7 + 1 AS int) AS RegistrationWeek,
+    COUNT(runner_id) AS RunnerRegistered
 FROM
     runners
 GROUP BY
-    Week_Registered
+    RegistrationWeek
+ORDER BY
+    RegistrationWeek;
 ```
 ```
 -- We need to use the runner registration table to answer this question
--- We then divide our answer up by weeks again, but this time we need to use julianday function in SQLite5
--- Julianday can be used to count the number of days from a specific starting point
+-- We then divide our answer up by weeks again
 -- We then divide that number by 7 to give us the amount of weeks as a round integer
 -- We add 1 to this answer so the first week isnt 0
 ```
@@ -494,16 +497,18 @@ GROUP BY
 ```sql
 SELECT
     runner_id,
-    ROUND(AVG((julianday(pickup_time) - julianday(order_time)) * 24 * 60), 1) AS AvgTime
-FROM runner_orders
-INNER JOIN customer_orders ON customer_orders.order_id = runner_orders.order_id
+    ROUND(AVG(EXTRACT(EPOCH FROM (CAST(pickup_time AS timestamp) - CAST(order_time AS timestamp))) / 60), 1) AS AvgTime
+FROM 
+	runner_orders
+INNER JOIN 
+	customer_orders 
+		ON customer_orders.order_id = runner_orders.order_id
 WHERE duration <> 'null'
 GROUP BY runner_id
 ORDER BY runner_id
 ```
 ```
 -- We need to use the customer order and runner order table to calculate our answer from time of order to time of pickup
--- Because SQLite is limited with datetime functions we need to use julianday again
 -- We find orders that were actually picked up and delivered, so we ignore duration that is null
 -- Group by and Order by runner_id so we can see the stats of each one
 ```
@@ -514,18 +519,19 @@ ORDER BY runner_id
 ```sql
 SELECT
     pizzas_ordered,
-    AVG(AvgTime) AS AverageTime
+    ROUND(AVG(EXTRACT(EPOCH FROM (pickup_time::timestamp - order_time::timestamp)) / 60), 1) AS AverageTime
 FROM (
     SELECT
         COUNT(co.pizza_id) AS pizzas_ordered,
-        ROUND((strftime('%s', ro.pickup_time) - strftime('%s', co.order_time)) / 60.0) AS AvgTime
+        ro.pickup_time,
+        co.order_time
     FROM runner_orders ro
     INNER JOIN customer_orders co ON co.order_id = ro.order_id
     WHERE ro.duration <> 'null'
-    GROUP BY ro.order_id
+    GROUP BY ro.order_id, ro.pickup_time, co.order_time
 ) AS subquery
 GROUP BY pizzas_ordered
-ORDER BY pizzas_ordered
+ORDER BY pizzas_ordered;
 ```
 ```
 -- We are going to use a similar query to our last to find runner times
@@ -534,7 +540,7 @@ ORDER BY pizzas_ordered
 -- Looking at our results we can definitely see that the more pizza ordered the longer it takes for the runner
 -- To GROUP BY our aggregate count we can simply use a subquery select. (Remember to alias your subquery)
 ```
-![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/b4e7cda2-b97c-424c-93b2-518e01b3118d)
+![image](https://github.com/CameronCSS/SQL-Queries/assets/121735588/33759d43-c4b0-42aa-afe5-231c806225f2)
 <br>
   **4. What was the average distance travelled for each customer?**
   
