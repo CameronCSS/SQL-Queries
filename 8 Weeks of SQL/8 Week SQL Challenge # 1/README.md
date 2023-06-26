@@ -1,5 +1,7 @@
 <a name="readme-top"></a>
 
+<a href="https://github.com/CameronCSS/PersonalProjects"><strong>« Back to Project Portfolio</strong></a>
+
 <a href="https://8weeksqlchallenge.com/case-study-1/" target="_blank"> LINK TO THE CHALLENGE </a>
 
 ```diff
