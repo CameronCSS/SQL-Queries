@@ -7,7 +7,7 @@
   <h2 align="center">SQL Personal Projects</h2>
   <p align="center">
   All my SQL queries :bookmark_tabs: and projects are listed here.
-   <br> <sub><a href="https://cameroncss.com/#contact">:wavy_dash: Contact me :wavy_dash:</a></sub>
+   <br> <sub><a href="https://cameroncss.com/#contact">Contact me</a></sub>
 <br>
     <br>
      <a href="https://github.com/CameronCSS/PersonalProjects/blob/main/README.md"><strong>« Back to Portfolio</strong></a>
