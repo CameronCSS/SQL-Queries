@@ -7,7 +7,7 @@
   <h2 align="center">Data Lemur SQL Questions</h2>
   <p align="center">
   All my SQL code 👨‍💻 answers for the Data Lemur questions are available here.
-   <br> <sub><a href="https://cameroncss.com/#contact">:wavy_dash: Contact me :wavy_dash:</a></sub>
+   <br> <sub><a href="https://cameroncss.com/#contact">Contact me</a></sub>
 <br>
     <br>
      <a href="https://github.com/CameronCSS/PersonalProjects"><strong>« Back to Project Portfolio</strong></a>
