@@ -7,7 +7,7 @@
   <h2 align="center">Data Lemur SQL Questions</h2>
   <p align="center">
   All my SQL code 👨‍💻 answers for the Data Lemur questions are available here.
-   <br> <sub><a href="https://cameroncss.com/#contact">Contact me</a></sub>
+   <br> <sub><a href="https://camdoesdata.com/#contact">Contact Me</a></sub>
 <br>
     <br>
      <a href="https://github.com/CameronCSS/PersonalProjects"><strong>« Back to Project Portfolio</strong></a>
@@ -104,7 +104,7 @@
 ----
 
 <a name="Contact"></a> 
-## <a href="https://cameroncss.com/#contact">Contact Me</a>
+## <a href="https://camdoesdata.com/#contact">Contact Me</a>
 
   </table>
   <p style="margin-left: auto;">
